@@ -1,3 +1,17 @@
+:root {
+  --yellow: #ffdc6f;
+  --yellow-accent: linear-gradient(to right, #ffe8a2, #ffc519);
+  --red: #eb5353;
+  --black: #212121;
+  --black-lighten-1: #757575;
+  --black-lighten-2: #bdbdbd;
+  --black-lighten-3: #e0e0e0;
+  --black-lighten-4: #fbfbfb;
+  --white: #ffffff;
+
+  color: var(--black);
+}
+
 html,
 body {
   padding: 0;

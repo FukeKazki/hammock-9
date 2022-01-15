@@ -10,6 +10,12 @@
   --white: #ffffff;
 
   color: var(--black);
+
+  font-size: 10px;
+
+  --z-index--header: 5;
+  --z-index--modal: 10;
+  --z-index--overlay: 100;
 }
 
 html,

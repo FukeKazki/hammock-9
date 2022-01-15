@@ -30,7 +30,7 @@ const closeIcon = css`
   top: 16px;
   right: 16px;
   transition: 0.3s;
-  z-index: 10;
+  z-index: var(--z-index--modal);
 
   &:hover {
     opacity: 0.5;

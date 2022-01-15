@@ -12,7 +12,8 @@ export interface UserIconProps extends ImageProps {
 const common = css`
   border-radius: 50%;
   vertical-align: top;
-  border: 2px solid ${colors.black.primary};
+  flex-shrink: 0;
+  border: 2px solid ${colors.black.primary} !important;
 `;
 
 export const UserIcon = ({ src, alt, ...props }: UserIconProps): JSX.Element => {

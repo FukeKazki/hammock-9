@@ -45,10 +45,7 @@ export const useAuth = () => {
     const provider = createAuthProvider(kind);
 
     try {
-      const res = await signInWithPopup(firebaseAuth, provider);
-      const token = await res.user.getIdToken();
-
-      console.log(token);
+      await signInWithPopup(firebaseAuth, provider);
     } catch (err) {
       console.error(err);
       setSignInError("サインインに失敗しました");

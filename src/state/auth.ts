@@ -29,9 +29,10 @@ export const AuthInit = () => {
       }
 
       try {
+        console.log(user);
         const token = await user.getIdToken();
         if (!user.displayName) throw new Error("display name is not found");
-        const res = await fetch(`/api/contributions/${user.displayName}`);
+        const res = await fetch(`/api/contributions/${user.reloadUserInfo.screenName}`);
         const contributions = await res.json();
 
         setAuthState({ isLoading: false, token, user, contribution: contributions.total });

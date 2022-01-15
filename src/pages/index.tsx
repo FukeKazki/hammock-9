@@ -1,18 +1,8 @@
 import React from "react";
-import { useAuth } from "~/hook/useAuth";
+import { IndexTemplate } from "~/component/template/Index";
 
 const Home: React.FC = () => {
-  const { auth, signUp, signUpError, signUpIsLoading } = useAuth();
-  console.log("token", auth.token);
-
-  return (
-    <>
-      {signUpError && <p>エラー: {signUpError}</p>}
-      <button disabled={signUpIsLoading} onClick={() => signUp("github")}>
-        ログイン
-      </button>
-    </>
-  );
+  return <IndexTemplate />;
 };
 
 export default Home;

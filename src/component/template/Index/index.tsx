@@ -1,9 +1,21 @@
-// import { css } from "@emotion/react";
-import { Fragment } from "react";
-// import { breakpoints, colors } from "~/styles/themes";
-// import { Container } from "~/component/layout/Container";
-// import { GridContainer } from "~/component/layout/GridContainer";
+import { Container, FlexContainer } from "~/component/layout";
+import { LoginButton } from "~/component/shared/buttons";
+import { GitHubIcon } from "~/component/shared/icons";
+import { useAuth } from "~/hook/useAuth";
 
 export const IndexTemplate = (): JSX.Element => {
-  return <Fragment></Fragment>;
+  const { signUp, signUpIsLoading } = useAuth();
+
+  return (
+    <Container>
+      <FlexContainer justifyContent="center" alignItems="center" flexDirection="column">
+        <h1>ハンモック予約し9？？</h1>
+        <LoginButton disabled={signUpIsLoading} onClick={() => signUp("github")}>
+          <GitHubIcon />
+          GitHubでログイン
+        </LoginButton>
+        <h1>まずはログインし9？？</h1>
+      </FlexContainer>
+    </Container>
+  );
 };

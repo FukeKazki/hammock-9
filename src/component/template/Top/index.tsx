@@ -1,20 +1,26 @@
-// import { css } from "@emotion/react";
-import { useAuth } from "~/hook/useAuth";
 import { Container } from "~/component/layout";
-// import { breakpoints, colors } from "~/styles/themes";
-// import { Container } from "~/component/layout/Container";
-// import { GridContainer } from "~/component/layout/GridContainer";
+import { UserContent } from "~/component/domain/top/UserContent";
+import { css } from "@emotion/react";
+import { breakpoints } from "~/styles/themes";
+
+const gridContainer = css`
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  gap: 32px;
+
+  @media (min-width: ${breakpoints.pc}px) {
+    grid-template-columns: 1fr 340px;
+  }
+`;
 
 export const TopIndexTemplate = (): JSX.Element => {
-  const {
-    auth: { user, contribution },
-  } = useAuth();
-
   return (
     <Container>
-      <p>top index page</p>
-      <h1>{user?.displayName}</h1>
-      <h1>{contribution}commit</h1>
+      <div css={gridContainer}>
+        <UserContent />
+        <div>カレンダ</div>
+      </div>
     </Container>
   );
 };
